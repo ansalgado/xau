@@ -1,0 +1,40 @@
+@page "{id:int?}"
+@model xau.Pages.Recolectores.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Recolector</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Recolector.Nombre)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Recolector.Telefono)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Recolector.Telefono)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Recolector.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Recolector.Email)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="Recolector.ID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

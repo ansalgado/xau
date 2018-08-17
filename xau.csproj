@@ -1,0 +1,58 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
+  </ItemGroup>
+    
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Pages\Entregas\Index.cshtml" />
+    <Content Remove="Pages\Entregas\Delete.cshtml" />
+    <Content Remove="Pages\Entregas\Details.cshtml" />
+    <Content Remove="Pages\Entregas\Edit.cshtml" />
+    <Content Remove="Pages\Entregas\Create.cshtml" />
+    <Content Remove="Pages\Proveedores\Create.cshtml" />
+    <Content Remove="Pages\Proveedores\Delete.cshtml" />
+    <Content Remove="Pages\Proveedores\Details.cshtml" />
+    <Content Remove="Pages\Proveedores\Edit.cshtml" />
+    <Content Remove="Pages\Proveedores\Index.cshtml" />
+    <Content Remove="Pages\Recolectores\Create.cshtml" />
+    <Content Remove="Pages\Recolectores\Delete.cshtml" />
+    <Content Remove="Pages\Recolectores\Details.cshtml" />
+    <Content Remove="Pages\Recolectores\Edit.cshtml" />
+    <Content Remove="Pages\Recolectores\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pages\Entregas\Index.cshtml" />
+    <None Include="Pages\Entregas\Delete.cshtml" />
+    <None Include="Pages\Entregas\Details.cshtml" />
+    <None Include="Pages\Entregas\Edit.cshtml" />
+    <None Include="Pages\Entregas\Create.cshtml" />
+    <None Include="Pages\Proveedores\Create.cshtml" />
+    <None Include="Pages\Proveedores\Delete.cshtml" />
+    <None Include="Pages\Proveedores\Details.cshtml" />
+    <None Include="Pages\Proveedores\Edit.cshtml" />
+    <None Include="Pages\Proveedores\Index.cshtml" />
+    <None Include="Pages\Recolectores\Create.cshtml" />
+    <None Include="Pages\Recolectores\Delete.cshtml" />
+    <None Include="Pages\Recolectores\Details.cshtml" />
+    <None Include="Pages\Recolectores\Edit.cshtml" />
+    <None Include="Pages\Recolectores\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Migrations\20180815201403_InitialCreate.cs" />
+  </ItemGroup>
+</Project>

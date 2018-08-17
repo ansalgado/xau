@@ -1,0 +1,66 @@
+@page
+@model xau.Pages.Entregas.IndexModel
+
+@{
+    ViewData["Title"] = "Entregas";
+    Layout = "_Layout";
+}
+
+<h2>Entregas</h2>
+
+<p>
+    <a asp-page="Create">Nueva Entrega</a>
+</p>
+
+<form>
+    <p>
+        Proveedor: <select asp-for="FiltroProveedor" asp-items="Model.Proveedores">
+            <option value="">Todos</option>
+        </select>
+
+        <input type="submit" value="Filtrar" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Entrega[0].Fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Entrega[0].Peso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Entrega[0].Recolector.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Entrega[0].Proveedor.Nombre)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Entrega) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Peso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Recolector.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Proveedor.Nombre)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

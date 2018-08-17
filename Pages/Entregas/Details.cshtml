@@ -1,0 +1,43 @@
+@page "{id:int?}"
+@model xau.Pages.Entregas.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Entrega</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Entrega.Fecha)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Entrega.Fecha)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Entrega.Peso)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Entrega.Peso)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Entrega.Recolector)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Entrega.Recolector)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Entrega.Proveedor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Entrega.Proveedor)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Entrega.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
