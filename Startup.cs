@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -37,7 +38,17 @@ namespace xau
             services.AddDbContext<XauContext>(options =>
               options.UseSqlite(Configuration.GetConnectionString("XauContext")));
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc()
+                    .AddRazorPagesOptions(options =>
+                    {
+                        options.Conventions.AuthorizeFolder("/Entregas");
+                        options.Conventions.AddPageRoute("/Entregas", "");
+                    })
+                    .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            //// Added this to add roles to Identity
+            //services.AddDefaultIdentity<IdentityUser>().AddRoles<IdentityRole>()
+                    //.AddEntityFrameworkStores<XauContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,6 +67,7 @@ namespace xau
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseAuthentication();
 
             app.UseMvc();
         }

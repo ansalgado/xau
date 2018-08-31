@@ -11,6 +11,9 @@ namespace xau.Models
         [DataType(DataType.Date)]
         public DateTime Fecha { get; set; }
 
+        // user Id from the AspNetUser table
+        public string OwnerID { get; set; }
+
         [Display(Name = "Peso (gr)")]
         [Column(TypeName = "decimal(18,2)")]
         public decimal Peso { get; set; }
@@ -20,5 +23,13 @@ namespace xau.Models
         // Navigation Properties
         public Proveedor Proveedor { get; set; }
         public Recolector Recolector { get; set; }
+
+        public EntregaStatus status { get; set; }
     }
+}
+
+public enum EntregaStatus
+{
+    pendiente,
+    aceptada
 }
