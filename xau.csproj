@@ -34,6 +34,7 @@
     <Content Remove="Pages\Recolectores\Details.cshtml" />
     <Content Remove="Pages\Recolectores\Edit.cshtml" />
     <Content Remove="Pages\Recolectores\Index.cshtml" />
+    <Content Remove="Pages\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Pages\Entregas\Index.cshtml" />
@@ -55,5 +56,6 @@
   <ItemGroup>
     <Compile Remove="Migrations\20180815201403_InitialCreate.cs" />
     <Compile Remove="Areas\Identity\Data\xauContext.cs" />
+    <Compile Remove="Pages\Index.cshtml.cs" />
   </ItemGroup>
 </Project>
