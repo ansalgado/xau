@@ -9,6 +9,7 @@ namespace xau.Models
         public int ID { get; set; }
 
         [DataType(DataType.Date)]
+        [Display(Name = "Fecha Entrega")]
         public DateTime Fecha { get; set; }
 
         // user Id from the AspNetUser table
@@ -18,6 +19,8 @@ namespace xau.Models
         [Column(TypeName = "decimal(18,2)")]
         public decimal Peso { get; set; }
         public int RecolectorID { get; set; }
+
+        [Display(Name = "Proveedor")]
         public int ProveedorID { get; set; }
 
         // Navigation Properties
