@@ -24,6 +24,7 @@ namespace xau.Pages.Entregas
         public CreateModel(xau.Models.XauContext context)
         {
             _context = context;
+            FechaEntrega = DateTime.Now;
         }
 
         public IActionResult OnGet()

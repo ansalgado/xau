@@ -30,6 +30,8 @@ namespace xau.Pages.Entregas
             }
 
             Entrega = await _context.Entrega.FirstOrDefaultAsync(m => m.ID == id);
+            Entrega.Recolector = await _context.Recolector.FirstOrDefaultAsync(r => r.ID == Entrega.RecolectorID);
+            Entrega.Proveedor = await _context.Proveedor.FirstOrDefaultAsync(p => p.ID == Entrega.ProveedorID);
 
             if (Entrega == null)
             {
