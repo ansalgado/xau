@@ -2,11 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <ReleaseVersion>0.3</ReleaseVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.3" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.1.1" />
   </ItemGroup>
 
@@ -34,10 +35,11 @@
     <Content Remove="Pages\Recolectores\Details.cshtml" />
     <Content Remove="Pages\Recolectores\Edit.cshtml" />
     <Content Remove="Pages\Recolectores\Index.cshtml" />
+    <Content Remove="Pages\About.cshtml" />
+    <Content Remove="Pages\Contact.cshtml" />
     <Content Remove="Pages\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pages\Entregas\Index.cshtml" />
     <None Include="Pages\Entregas\Delete.cshtml" />
     <None Include="Pages\Entregas\Details.cshtml" />
     <None Include="Pages\Entregas\Edit.cshtml" />
@@ -52,10 +54,12 @@
     <None Include="Pages\Recolectores\Details.cshtml" />
     <None Include="Pages\Recolectores\Edit.cshtml" />
     <None Include="Pages\Recolectores\Index.cshtml" />
+    <None Include="Pages\Entregas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Migrations\20180815201403_InitialCreate.cs" />
     <Compile Remove="Areas\Identity\Data\xauContext.cs" />
-    <Compile Remove="Pages\Index.cshtml.cs" />
+    <Compile Remove="Pages\About.cshtml.cs" />
+    <Compile Remove="Pages\Contact.cshtml.cs" />
   </ItemGroup>
 </Project>

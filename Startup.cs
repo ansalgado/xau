@@ -42,7 +42,7 @@ namespace xau
                     .AddRazorPagesOptions(options =>
                     {
                         options.Conventions.AuthorizeFolder("/Entregas");
-                        options.Conventions.AddPageRoute("/Entregas/Index", "");
+                       options.Conventions.AddPageRoute("/Entregas/Index", "");
                     })
                     .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
