@@ -18,6 +18,13 @@ namespace xau.Models
         [Display(Name = "Peso (gr)")]
         [Column(TypeName = "decimal(18,2)")]
         public decimal Peso { get; set; }
+
+        [Display(Name = "Ley")]
+        public decimal LeyRecuperable { get; set; }
+
+        // Ley Analitica se calcula: -0.5
+        // Peso Fino (aka Puro, Total Fino) se calcula: (PesoBruto x LeyRecupreable ) 1000
+
         public int RecolectorID { get; set; }
 
         [Display(Name = "Proveedor")]

@@ -29,15 +29,15 @@
                 @Html.DisplayNameFor(model => model.Entrega[0].Fecha)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Entrega[0].Proveedor.Nombre)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Entrega[0].Peso)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Entrega[0].Recolector.Nombre)
+                @Html.DisplayNameFor(model => model.Entrega[0].LeyRecuperable)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Entrega[0].Proveedor.Nombre)
-            </th>
-            <th></th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -47,18 +47,23 @@
                 @Html.DisplayFor(modelItem => item.Fecha)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Peso)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Recolector.Nombre)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Proveedor.Nombre)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                @Html.DisplayFor(modelItem => item.Peso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeyRecuperable)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Recolector.Nombre)
+            </td>*@
+
+
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Editar</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Detalles</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Borrar</a>
             </td>
         </tr>
 }
