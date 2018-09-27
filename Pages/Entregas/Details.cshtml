@@ -2,7 +2,7 @@
 @model xau.Pages.Entregas.DetailsModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalles";
 }
 
 <h2>Details</h2>
@@ -24,6 +24,18 @@
             @Html.DisplayFor(model => model.Entrega.Peso)
         </dd>
         <dt>
+            @Html.DisplayNameFor(model => model.Entrega.LeyRecuperable)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Entrega.LeyRecuperable)
+        </dd>
+        <dt>
+            Total Fino
+        </dt>
+        <dd>
+            @Model.Entrega.CalcularFino(Model.Entrega.Peso, Model.Entrega.LeyRecuperable).ToString("0.00")
+        </dd>
+        <dt>
             @Html.DisplayNameFor(model => model.Entrega.Recolector)
         </dt>
         <dd>
@@ -38,6 +50,6 @@
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.Entrega.ID">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Edit" asp-route-id="@Model.Entrega.ID">Editar</a> |
+    <a asp-page="./Index">Volver a la Lista</a>
 </div>

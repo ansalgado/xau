@@ -35,6 +35,11 @@ namespace xau.Models
         public Recolector Recolector { get; set; }
 
         public EntregaStatus status { get; set; }
+
+        public decimal CalcularFino(decimal bruto, decimal ley)
+        {
+            return ((bruto * ley) / 1000);
+        }
     }
 }
 

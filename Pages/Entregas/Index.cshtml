@@ -37,6 +37,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Entrega[0].LeyRecuperable)
             </th>
+            <th>
+                Fino
+            </th>
             <th>Acciones</th>
         </tr>
     </thead>
@@ -59,7 +62,9 @@
                 @Html.DisplayFor(modelItem => item.Recolector.Nombre)
             </td>*@
 
-
+            <td>
+                @Model.Entrega[0].CalcularFino(item.Peso, item.LeyRecuperable).ToString("0.00")
+            </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Editar</a> |
                 <a asp-page="./Details" asp-route-id="@item.ID">Detalles</a> |

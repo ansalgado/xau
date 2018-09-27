@@ -2,12 +2,12 @@
 @model xau.Pages.Entregas.DeleteModel
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Borrar";
 }
 
-<h2>Delete</h2>
+<h2>Borrar</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>¿Está seguro que quiere borrar esta Entrega?</h3>
 <div>
     <h4>Entrega</h4>
     <hr />
@@ -25,22 +25,34 @@
             @Html.DisplayFor(model => model.Entrega.Peso)
         </dd>
         <dt>
+            @Html.DisplayNameFor(model => model.Entrega.LeyRecuperable)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Entrega.LeyRecuperable)
+        </dd>
+        <dt>
+            Total Fino
+        </dt>
+        <dd>
+            @Model.Entrega.CalcularFino(Model.Entrega.Peso, Model.Entrega.LeyRecuperable).ToString("0.00")
+        </dd>
+        <dt>
             @Html.DisplayNameFor(model => model.Entrega.Recolector)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Entrega.Recolector)
+            @Html.DisplayFor(model => model.Entrega.Recolector.Nombre)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Entrega.Proveedor)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Entrega.Proveedor)
+            @Html.DisplayFor(model => model.Entrega.Proveedor.Nombre)
         </dd>
     </dl>
 
     <form method="post">
         <input type="hidden" asp-for="Entrega.ID" />
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        <a asp-page="./Index">Back to List</a>
+        <input type="submit" value="Borrar" class="btn btn-default" /> |
+        <a asp-page="./Index">Volver a la Lista</a>
     </form>
 </div>
